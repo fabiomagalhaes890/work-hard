@@ -1,14 +1,7 @@
-FROM node as builder
-
-WORKDIR /src/app
-
-RUN npm install -g @angular/cli
-
-COPY package.json ./
-
+FROM node
+WORKDIR /usr/src/app
+COPY package*.json ./
 RUN npm install
-COPY src/ ./src/
-RUN npm run build
-
-FROM nginx
-COPY --from=builder /src/app/build/ /src/share/nginx/html
+RUN npm install -g @angular/cli
+COPY . .
+cmd ["npm","start"]
