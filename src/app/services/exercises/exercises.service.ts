@@ -14,7 +14,7 @@ export class ExercisesService {
       finished: false,
       name: 'Supino com barra',
       description: '',
-      image: '..\\assets\\'+ 1 +'.png',
+      image: '..\\assets\\'+ 1 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Composto',
       muscleGroup: 'Peitoral'
@@ -26,7 +26,7 @@ export class ExercisesService {
       finished: false,
       name: 'Supino com halteres',
       description: '',
-      image: '..\\assets\\'+ 2 +'.png',
+      image: '..\\assets\\'+ 2 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Composto',
       muscleGroup: 'Peitoral'
@@ -38,31 +38,31 @@ export class ExercisesService {
       finished: false,
       name: 'Supino com máquina',
       description: '',
-      image: '..\\assets\\'+ 3 +'.png',
+      image: '..\\assets\\'+ 3 +'.gif',
       weekDay: 'Segunda-Feira',
       type: 'Composto',
       muscleGroup: 'Peitoral'
     };
     exercisesList.push(supinoComMaquina);
 
-    let flexoesDeTronco: Exercise = {
+    let flexoesDeBraco: Exercise = {
       started: false,
       finished: false,
-      name: 'Flexoes de tronco',
+      name: 'Flexoes de braço',
       description: '',
-      image: '..\\assets\\'+ 4 +'.png',
+      image: '..\\assets\\'+ 4 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Composto',
       muscleGroup: 'Peitoral'
     };
-    exercisesList.push(flexoesDeTronco);
+    exercisesList.push(flexoesDeBraco);
 
     let crucifixoComHalteres: Exercise = {
       started: false,
       finished: false,
       name: 'Crucifixo com halteres',
       description: '',
-      image: '..\\assets\\'+ 5 +'.png',
+      image: '..\\assets\\'+ 5 +'.gif',
       weekDay: 'Segunda-Feira',
       type: 'Isolamento',
       muscleGroup: 'Peitoral'
@@ -74,7 +74,7 @@ export class ExercisesService {
       finished: false,
       name: 'Crucifixo em polia',
       description: '',
-      image: '..\\assets\\'+ 6 +'.png',
+      image: '..\\assets\\'+ 6 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Isolamento',
       muscleGroup: 'Peitoral'
@@ -85,7 +85,7 @@ export class ExercisesService {
       started: false,
       finished: false,
       name: 'Crossover',
-      image: '..\\assets\\'+ 7 +'.png',
+      image: '..\\assets\\'+ 7 +'.gif',
       description: '',
       weekDay: 'Segunda-Feira',
       type: 'Isolamento',
@@ -98,7 +98,7 @@ export class ExercisesService {
       finished: false,
       name: 'Peck deck',
       description: '',
-      image: '..\\assets\\'+ 8 +'.png',
+      image: '..\\assets\\'+ 8 +'.gif',
       weekDay: 'Segunda-Feira',
       type: 'Isolamento',
       muscleGroup: 'Peitoral'
@@ -110,7 +110,7 @@ export class ExercisesService {
       finished: false,
       name: 'Fundos em barras',
       description: '',
-      image: '..\\assets\\'+ 9 +'.png',
+      image: '..\\assets\\'+ 9 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Composto',
       muscleGroup: 'Tríceps'
@@ -122,7 +122,7 @@ export class ExercisesService {
       finished: false,
       name: 'Fundos entre bancos',
       description: '',
-      image: '..\\assets\\'+ 10 +'.png',
+      image: '..\\assets\\'+ 10 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Composto',
       muscleGroup: 'Tríceps'
@@ -134,7 +134,7 @@ export class ExercisesService {
       finished: false,
       name: 'Fundos em máquina',
       description: '',
-      image: '..\\assets\\'+ 11 +'.png',
+      image: '..\\assets\\'+ 11 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Composto',
       muscleGroup: 'Tríceps'
@@ -146,7 +146,7 @@ export class ExercisesService {
       finished: false,
       name: 'Supino agarre junto',
       description: '',
-      image: '..\\assets\\'+ 12 +'.png',
+      image: '..\\assets\\'+ 12 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Composto',
       muscleGroup: 'Tríceps'
@@ -158,7 +158,7 @@ export class ExercisesService {
       finished: false,
       name: 'Flexões agarre junto',
       description: '',
-      image: '..\\assets\\'+ 13 +'.png',
+      image: '..\\assets\\'+ 13 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Composto',
       muscleGroup: 'Tríceps'
@@ -170,7 +170,7 @@ export class ExercisesService {
       finished: false,
       name: 'Extensao triceps deitado',
       description: '',
-      image: '..\\assets\\'+ 14 +'.png',
+      image: '..\\assets\\'+ 14 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Isolamento',
       muscleGroup: 'Tríceps'
@@ -182,43 +182,43 @@ export class ExercisesService {
       finished: false,
       name: 'Extensao triceps inclinado',
       description: '',
-      image: '..\\assets\\'+ 15 +'.png',
+      image: '..\\assets\\'+ 15 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Isolamento',
       muscleGroup: 'Tríceps'
     };
     exercisesList.push(extensaoTricepsInclinado);
 
-    let extensaoTricepsSentado: Exercise = {
+    let extensaoTricepsMaquina: Exercise = {
       started: false,
       finished: false,
-      name: 'Extensao triceps sentado',
+      name: 'Extensao triceps em máquina',
       description: '',
-      image: '..\\assets\\'+ 16 +'.png',
+      image: '..\\assets\\'+ 16 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Isolamento',
       muscleGroup: 'Tríceps'
     };
-    exercisesList.push(extensaoTricepsSentado);
+    exercisesList.push(extensaoTricepsMaquina);
 
-    let extensaoTricepsSentadoHalter: Exercise = {
-      started: false,
-      finished: false,
-      name: 'Extensao triceps sentado c/ halter',
-      description: '',
-      image: '..\\assets\\'+ 17 +'.png',
-      weekDay: 'Segunda-Feira',
-      type: 'Isolamento',
-      muscleGroup: 'Tríceps'
-    };
-    exercisesList.push(extensaoTricepsSentadoHalter);
+    // let extensaoTricepsSentadoHalter: Exercise = {
+    //   started: false,
+    //   finished: false,
+    //   name: 'Extensao triceps sentado c/ halter',
+    //   description: '',
+    //   image: '..\\assets\\'+ 17 +'.png',
+    //   weekDay: 'Segunda-Feira',
+    //   type: 'Isolamento',
+    //   muscleGroup: 'Tríceps'
+    // };
+    // exercisesList.push(extensaoTricepsSentadoHalter);
 
     let puxadaTriceps: Exercise = {
       started: false,
       finished: false,
       name: 'Puxada de tríceps',
       description: '',
-      image: '..\\assets\\'+ 18 +'.png',
+      image: '..\\assets\\'+ 18 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Isolamento',
       muscleGroup: 'Tríceps'
@@ -230,7 +230,7 @@ export class ExercisesService {
       finished: false,
       name: 'Kickback com halter',
       description: '',
-      image: '..\\assets\\'+ 19 +'.png',
+      image: '..\\assets\\'+ 19 +'.gif',
       weekDay: 'Segunda-Feira',
       type: 'Isolamento',
       muscleGroup: 'Tríceps'
