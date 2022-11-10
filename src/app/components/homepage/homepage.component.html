@@ -24,6 +24,23 @@
                     </ul>
                 </div>
             </div>
+            <hr>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Atenção</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Cuidados</h6>
+                    <ul>
+                        <li class="card-text card-font-size">
+                            Antes de começar a seguir uma série de exercícios, tanto em casa como na academia, é fundamental consultar um médico para ter certeza que está apto a praticar esse tipo de treino.</li>
+                        <li class="card-text card-font-size">
+                            Também é importante ter o auxílio de um profissional de educação física, que poderá te ensinar as técnicas corretas de execução dos movimentos e ajudar caso algum problema ocorra.</li>
+                        <li class="card-text card-font-size">
+                            Se optar por malhar sozinho, com o auxílio de vídeos da internet, tenha o cuidado de prestar bem atenção nas explicações e assisti-los várias vezes, até ter certeza de como os movimentos devem ser feitos.</li>
+                        <li class="card-text card-font-size">
+                            Além disso, ao sentir uma lesão ou se machucar, não demore para buscar o atendimento de um médico.</li>
+                    </ul>
+                </div>
+            </div>
             
         </div>
       </div>
@@ -33,17 +50,31 @@
 <div class="container-fluid position-start">
     <br>
     <div class="col-12">
-        Treino de {{weekDay}}
+        <label for="select_project" class="form-label">Treino de</label>
+        <select id="select_project" class="form-select form-select-sm"
+            (change)="changeDay($event)">
+            <option value="{{weekDay}}">{{weekDay}}</option>
+            <option *ngFor="let day of days" value="{{day}}">
+                {{ day }}
+            </option>
+        </select>
     </div>
     <hr>
+    <div class="container-fluid">
+        <div *ngIf="!IsTrainingDay" class="row justify-content-center">
+            <div class="col-8 done">Este não é dia de treino, selecione um dia para treinar.</div>
+        </div>
+        
+    </div>
+    
     <div class="col-12 shadow p-3 mb-3 bg-body rounded solid-margin" *ngFor="let exercise of exercisesList;">
         <div class="row justify-content-center">
             <div class="col-6" style="margin-top: 0.5em;">
                 <img class="col-8" src="{{exercise.image}}" style="border: 1px rgb(228, 228, 228) solid; border-radius: 5px;">
             </div>
             <div class="col-6">
-                <button *ngIf="!exercise.started" class="col-12 btn btn-secondary btn-sm shadow" (click)="changeExercise(exercise)">Iniciar</button>
-                <button *ngIf="exercise.started" class="col-12 btn btn-success btn-sm shadow" (click)="finishExercise(exercise)">Concluir</button>
+                <!-- <button *ngIf="!exercise.started" class="col-12 btn btn-secondary btn-sm shadow" (click)="changeExercise(exercise)">Iniciar</button> -->
+                <button *ngIf="!exercise.started" class="col-12 btn btn-success btn-sm shadow" (click)="finishExercise(exercise)">Concluído</button>
                 <div *ngIf="exercise.description !== ''" class="description-size"><span><strong>Descrição:</strong><br> {{exercise.description}}</span></div>                
             </div>
             <div class="col-12 description-size">
@@ -63,18 +94,3 @@
     </div>
 </div>
 
-<div *ngIf="!IsTrainingDay" class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-8 done">Hoje não é dia de treino, selecione um dia para treinar</div>
-    </div>
-    <div class="col">
-        <label for="select_project" class="form-label">Dia da semana</label>
-        <select id="select_project" class="form-select form-select-sm"
-            (change)="changeDay($event)">
-            <option value="">Selecione um dia</option>
-            <option *ngFor="let day of days" value="{{day}}">
-                {{ day }}
-            </option>
-        </select>
-    </div>
-</div>
