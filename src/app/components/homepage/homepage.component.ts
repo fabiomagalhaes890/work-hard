@@ -35,19 +35,19 @@ export class HomepageComponent implements OnInit {
     else
       this.exercisesAlreadyDone.push(e);
 
-    let compoundCount = this.exercisesAlreadyDone.filter((doneExercise) => doneExercise.type === "Composto" 
-    && doneExercise.muscleGroup === e.muscleGroup).length;
+    // let compoundCount = this.exercisesAlreadyDone.filter((doneExercise) => doneExercise.type === "Composto" 
+    // && doneExercise.muscleGroup === e.muscleGroup).length;
 
-    if(compoundCount === 2){
-      this.exercisesList = this.exercisesList.filter((exercise) => exercise.type === "Isolamento");
-    }
+    // if(compoundCount === 2){
+    //   this.exercisesList = this.exercisesList.filter((exercise) => exercise.type === "Isolamento" && exercise.muscleGroup === e.muscleGroup);
+    // }
 
-    let isolationCount = this.exercisesAlreadyDone.filter((doneExercise) => doneExercise.type === "Isolamento" 
-    && doneExercise.muscleGroup === e.muscleGroup).length;
+    // let isolationCount = this.exercisesAlreadyDone.filter((doneExercise) => doneExercise.type === "Isolamento" 
+    // && doneExercise.muscleGroup === e.muscleGroup).length;
 
-    if(isolationCount === 1){
-      this.exercisesList = this.exercisesList.filter((exercise) => exercise.type === "Composto");
-    }
+    // if(isolationCount === 1){
+    //   this.exercisesList = this.exercisesList.filter((exercise) => exercise.type === "Composto" && exercise.muscleGroup === e.muscleGroup);
+    // }
       
     if(this.exercisesList.length === 0)
       this.done = true;
