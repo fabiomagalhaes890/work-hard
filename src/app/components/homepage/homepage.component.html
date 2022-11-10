@@ -75,6 +75,10 @@
             <div class="col-6">
                 <!-- <button *ngIf="!exercise.started" class="col-12 btn btn-secondary btn-sm shadow" (click)="changeExercise(exercise)">Iniciar</button> -->
                 <button *ngIf="!exercise.started" class="col-12 btn btn-success btn-sm shadow" (click)="finishExercise(exercise)">Concluído</button>
+                <!-- <button class="card card-small success" (click)="showToast(EventTypes.Success)">
+                    <span class="material-icons">checkmark</span>
+                    <span>Show Success</span>
+                  </button> -->
                 <div *ngIf="exercise.description !== ''" class="description-size"><span><strong>Descrição:</strong><br> {{exercise.description}}</span></div>                
             </div>
             <div class="col-12 description-size">
@@ -93,4 +97,5 @@
         <div class="col-8 done">Boaa! agora pode ir descansar!</div>
     </div>
 </div>
-
+<!-- Toaster -->
+<app-toaster></app-toaster>
