@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Exercise } from 'src/app/components/homepage/homepage.component';
+import { Exercise } from 'src/app/models/exercise';
 
 @Injectable({
   providedIn: 'root'
@@ -562,6 +562,10 @@ export class ExercisesService {
       muscleGroup: 'Ombro'
     };
     exercisesList.push(elevacaoLateralComHalter);
+
+    exercisesList.forEach(exercise => {
+      exercise.session = 1;
+    });
 
     return exercisesList.filter((exercise) => exercise.weekDay === day);
   }

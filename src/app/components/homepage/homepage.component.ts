@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import * as e from 'express';
+
 import { EventTypes } from 'src/app/models/event-types';
+import { Exercise } from 'src/app/models/exercise';
 import { ExercisesService } from 'src/app/services/exercises/exercises.service';
 import { ToastService } from 'src/app/services/toaster/toast.service';
+
+import { Subject } from 'rxjs'
 
 @Component({
   selector: 'app-homepage',
@@ -19,12 +22,14 @@ export class HomepageComponent implements OnInit {
   IsTrainingDay: boolean = true;
   toastrShow: boolean = false;
   done: boolean = false;
+  timer: any = null;
+  interval!: any;
 
   EventTypes = EventTypes;
 
   constructor(
     private exercisesService: ExercisesService,
-    private toastService: ToastService) {}
+    private toastService: ToastService) { }
 
   changeExercise(exercise: any){
     
@@ -32,6 +37,11 @@ export class HomepageComponent implements OnInit {
   }
 
   finishExercise(e: any){
+    if(e.session < 2) {
+      this.toastService.showInfoToast('Informação', 'É recomendado fazer de 2 a 4 séries, foi feito apenas ' + e.session);
+      return;
+    }
+
     let index = this.exercisesList.indexOf(e);
     this.exercisesList.splice(index, 1);
 
@@ -57,13 +67,6 @@ export class HomepageComponent implements OnInit {
     if(isolationCount > 1){
       this.showToast(EventTypes.Warning, e);
     } 
-
-    // let isolationCount = this.exercisesAlreadyDone.filter((doneExercise) => doneExercise.type === "Isolamento" 
-    // && doneExercise.muscleGroup === e.muscleGroup).length;
-
-    // if(isolationCount === 1){
-    //   this.exercisesList = this.exercisesList.filter((exercise) => exercise.type === "Composto" && exercise.muscleGroup === e.muscleGroup);
-    // }
       
     if(this.exercisesList.length === 0)
       this.done = true;
@@ -90,6 +93,7 @@ export class HomepageComponent implements OnInit {
     this.weekDay = e.target.value;
     this.loadTraining(this.weekDay);
   }
+
   loadTraining(day: any){
     this.exercisesList = this.exercisesService.GetAllExercises(day);
 
@@ -99,21 +103,32 @@ export class HomepageComponent implements OnInit {
       this.IsTrainingDay = true;
   }
 
+  finishSession(exercise: any){
+    clearInterval(this.interval);
+    this.startTimer(30);
+    
+    exercise.session++;
+    
+    if(exercise.session > 4) {
+      this.toastService.showInfoToast('Informação', 'É recomendado fazer de 2 a 4 séries, foram feitas ' + exercise.session);
+    }
+  }
+
+  startTimer(timeInSeconds: number) {
+    this.timer = timeInSeconds;
+
+    this.interval = setInterval(() => {
+      if(this.timer === 1)
+        clearInterval(this.interval);
+
+      this.timer--;
+    }, 1000)
+  }
+
   ngOnInit(): void {
     let date = new Date();
     this.weekDay = this.days[date.getDay()];
 
     this.loadTraining(this.weekDay);
   }
-}
-
-export interface Exercise {
-  started: boolean,
-  finished: boolean,
-  name: string,
-  description: string,
-  image: string,
-  weekDay: string,
-  type: string,
-  muscleGroup: string
 }
