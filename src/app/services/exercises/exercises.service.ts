@@ -21,17 +21,17 @@ export class ExercisesService {
     };
     let exercisesList: Exercise[] = [supinoComBarra];
 
-    let supinoComHalteres: Exercise = {
+    let supinoComhalter: Exercise = {
       started: false,
       finished: false,
-      name: 'Supino com halteres',
+      name: 'Supino com halter',
       description: '',
       image: '..\\assets\\'+ 2 +'.webp',
       weekDay: 'Segunda-Feira',
       type: 'Composto',
       muscleGroup: 'Peitoral'
     };
-    exercisesList.push(supinoComHalteres);
+    exercisesList.push(supinoComhalter);
 
     let supinoComMaquina: Exercise = {
       started: false,
@@ -57,17 +57,17 @@ export class ExercisesService {
     };
     exercisesList.push(flexoesDeBraco);
 
-    let crucifixoComHalteres: Exercise = {
+    let crucifixoComhalter: Exercise = {
       started: false,
       finished: false,
-      name: 'Crucifixo com halteres',
+      name: 'Crucifixo com halter',
       description: '',
       image: '..\\assets\\'+ 5 +'.gif',
       weekDay: 'Segunda-Feira',
       type: 'Isolamento',
       muscleGroup: 'Peitoral'
     };
-    exercisesList.push(crucifixoComHalteres);
+    exercisesList.push(crucifixoComhalter);
 
     let crucifixoEmPolia: Exercise = {
       started: false,
